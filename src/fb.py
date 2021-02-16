@@ -26,7 +26,8 @@ def facebook_group_post(user,pwd):
                 print(t, t.text)
                 t.click()
                 time.sleep(10)
-                driver.find_element_by_class_name("bi6gxh9e").send_keys("Hi this is a test post")
+                post=driver.find_elements_by_class_name("bi6gxh9e")
+                print(len(post))
 
                 #t.send_keys("Hi this is a test post")
 
