@@ -19,15 +19,23 @@ def facebook_group_post(user,pwd):
         time.sleep(10)
         temp=driver.find_elements_by_class_name("a8c37x1j")
         #driver.find_element_by_class_name("a8c37x1j").send_keys("Hi this is test")
-        print(len(temp))
+
         for t in temp:
 
             if 'Create a public post' in t.text:
                 print(t, t.text)
                 t.click()
                 time.sleep(10)
-                post=driver.find_elements_by_class_name("bi6gxh9e")
-                print(len(post))
+                post_text=driver.find_elements_by_class_name("notranslate")
+                for p in post_text:
+                    if p.get_attribute("role")=="textbox":
+                        p.send_keys("Hi test from Python")
+                        btn=driver.find_elements_by_class_name("oajrlxb2")
+                        for b in btn:
+                            if b.get_attribute("aria-label")=="Post":
+                                b.click()
+                        time.sleep(10)
+                # print(len(post))
 
                 #t.send_keys("Hi this is a test post")
 
