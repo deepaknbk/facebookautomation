@@ -1,6 +1,7 @@
 from selenium import  webdriver
 import time
 import collections
+import getpass
 from selenium.webdriver.common.keys import Keys
 
 PATH="C:\Program Files (x86)\chromedriver.exe"
@@ -115,8 +116,9 @@ def facebook_group_post(user,pwd):
     pass
 
 def get_login():
-    user = input(f"Please enter FB User Name :")
-    pwd = input(f"Please enter FB Password :")
+    user = input("Please enter FB User Name:")
+    pwd=input("Please enter FB Password:")
+    #pwd = getpass.win_getpass("Password:")
     return user,pwd
 
 
